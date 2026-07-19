@@ -8,7 +8,9 @@ import SettingsModal from './components/SettingsModal';
 import logo from './assets/logo.png';
 import { BookOpen, TrendingUp, Plus, SettingsIcon } from './components/Icons';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'http://localhost:5000/api'
+  : '/api';
 
 export default function App() {
   const [trades, setTrades] = useState([]);
