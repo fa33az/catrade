@@ -248,16 +248,20 @@ export default function App() {
         justifyContent: 'center',
         zIndex: 9999999
       }}>
-        <img 
-          src="/favicon.png" 
-          alt="Catrade Splash Logo" 
-          style={{ 
-            height: '110px', 
-            width: '110px',
-            objectFit: 'contain',
-            display: 'block'
-          }} 
-        />
+        <div style={{
+          width: '40px',
+          height: '40px',
+          border: '4px solid #e2e8f0',
+          borderTop: '4px solid #fee440',
+          borderRadius: '50%',
+          animation: 'spin-loader 0.8s linear infinite'
+        }} />
+        <style>{`
+          @keyframes spin-loader {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}</style>
       </div>
     );
   }
