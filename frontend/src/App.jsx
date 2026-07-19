@@ -30,6 +30,7 @@ export default function App() {
     return saved ? { ...defaultSettings, ...JSON.parse(saved) } : defaultSettings;
   });
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [appReady, setAppReady] = useState(false);
 
   // Custom Confirmation Dialog State
   const [confirmDialog, setConfirmDialog] = useState({
@@ -48,6 +49,13 @@ export default function App() {
       }
     });
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAppReady(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Fetch trades from backend
   const fetchTrades = async () => {
@@ -224,6 +232,42 @@ export default function App() {
       return tradeDate >= limitDate;
     });
   }, [trades, settings.timeframe]);
+
+  // Render loading splash screen
+  if (!appReady) {
+    return (
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: '#000000',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 9999999
+      }}>
+        <img 
+          src="/favicon.png" 
+          alt="Catrade Splash Logo" 
+          style={{ 
+            height: '110px', 
+            width: '110px',
+            objectFit: 'contain',
+            animation: 'pulse-scale 1.5s infinite ease-in-out' 
+          }} 
+        />
+        <style>{`
+          @keyframes pulse-scale {
+            0% { transform: scale(0.95); opacity: 0.85; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.85; }
+          }
+        `}</style>
+      </div>
+    );
+  }
 
   // Render LoginScreen if not authenticated
   if (!token) {
