@@ -240,7 +240,7 @@ export default function App() {
       {/* Header */}
       <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          <img src={logo} alt="catrade logo" style={{ height: '80px', border: 'none', background: 'none', boxShadow: 'none', display: 'block' }} />
+          <img src={logo} alt="catrade logo" style={{ height: '65px', border: 'none', background: 'none', boxShadow: 'none', display: 'block' }} />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <button

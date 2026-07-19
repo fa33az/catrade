@@ -77,7 +77,7 @@ export default function LoginScreen({ apiBaseUrl, onLoginSuccess }) {
             src={logo} 
             alt="catrade logo" 
             style={{ 
-              height: '75px', 
+              height: '65px', 
               display: 'block'
             }} 
           />
