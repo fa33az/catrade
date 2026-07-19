@@ -27,7 +27,7 @@ const runCommand = (cmd, args, cwd, label) => {
 const backendDir = path.join(__dirname, 'backend');
 const frontendDir = path.join(__dirname, 'frontend');
 
-const backendProcess = runCommand('C:\\Python314\\python.exe', ['-u', 'server.py'], backendDir, 'Backend');
+const backendProcess = runCommand('node', ['server.js'], backendDir, 'Backend');
 const frontendProcess = runCommand('npm', ['run', 'dev'], frontendDir, 'Frontend');
 
 // Handle process termination cleanly
