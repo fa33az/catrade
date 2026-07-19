@@ -227,11 +227,16 @@ export default function App() {
 
   // Render LoginScreen if not authenticated
   if (!token) {
-    return <LoginScreen apiBaseUrl={API_BASE_URL} onLoginSuccess={handleLoginSuccess} />;
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <LoginScreen apiBaseUrl={API_BASE_URL} onLoginSuccess={handleLoginSuccess} />
+        <Footer />
+      </div>
+    );
   }
 
   return (
-    <div className="app-container">
+    <div className="app-container" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
       {/* Header */}
       <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
@@ -469,6 +474,51 @@ export default function App() {
           </div>
         </div>
       )}
+      <Footer />
     </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer style={{
+      padding: '2rem 1rem 3.5rem 1rem',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      zIndex: 10
+    }}>
+      <a 
+        href="https://github.com/fa33az/catrade" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        style={{
+          display: 'inline-flex',
+          padding: '0.6rem',
+          background: 'var(--color-yellow)',
+          border: '2px solid #000',
+          boxShadow: '3px 3px 0px #000',
+          cursor: 'pointer',
+          transition: 'all 0.15s ease',
+          borderRadius: '4px'
+        }}
+        className="github-footer-link"
+        title="GitHub Repository"
+      >
+        <svg 
+          viewBox="0 0 24 24" 
+          width="24" 
+          height="24" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          fill="none" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          style={{ color: '#000', display: 'block' }}
+        >
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </footer>
   );
 }

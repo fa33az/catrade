@@ -781,4 +781,20 @@ input[readonly] {
   color: var(--color-danger) !important;
 }
 
+/* GitHub Footer Link Styles */
+.github-footer-link:hover {
+  transform: translate(-3px, -3px) !important;
+  box-shadow: 6px 6px 0px #000 !important;
+  background-color: var(--color-pink) !important;
+}
+
+.github-footer-link:hover svg {
+  color: #ffffff !important;
+}
+
+.github-footer-link:active {
+  transform: translate(1px, 1px) !important;
+  box-shadow: 2px 2px 0px #000 !important;
+}
+
 

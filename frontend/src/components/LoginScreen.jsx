@@ -78,13 +78,9 @@ export default function LoginScreen({ apiBaseUrl, onLoginSuccess }) {
             alt="catrade logo" 
             style={{ 
               height: '75px', 
-              marginBottom: '0.25rem',
               display: 'block'
             }} 
           />
-          <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', fontWeight: '600' }}>
-            Jurnal & Analisis Performa Trading
-          </p>
         </div>
 
         {/* Tab Toggle */}
