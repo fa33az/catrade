@@ -242,19 +242,19 @@ export default function App() {
         left: 0,
         right: 0,
         bottom: 0,
-        background: '#000000',
+        background: '#FDFDFD',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 9999999
       }}>
         <img 
-          src="/splash_screens/splash.png" 
-          alt="Catrade Splash" 
+          src="/favicon.png" 
+          alt="Catrade Splash Logo" 
           style={{ 
-            width: '100%', 
-            height: '100%',
-            objectFit: 'cover',
+            height: '110px', 
+            width: '110px',
+            objectFit: 'contain',
             display: 'block'
           }} 
         />
