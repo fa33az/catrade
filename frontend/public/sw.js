@@ -1,10 +1,10 @@
-const CACHE_NAME = 'catrade-cache-v2';
+const CACHE_NAME = 'catrade-cache-v3';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/favicon.png',
   '/icons.svg',
-  '/manifest.json'
+  '/manifest-v2.json'
 ];
 
 self.addEventListener('install', (e) => {
